@@ -1,10 +1,16 @@
+require("babel-polyfill");
+
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const VueLoaderPlugin = require("vue-loader/lib/plugin");
-require("babel-polyfill");
 const Dotenv = require("dotenv-webpack");
+const path = require("path");
 
 module.exports = {
 	entry: ["babel-polyfill", "./src/index.js"],
+	output: {
+		filename: "bundle.js",
+		path: path.resolve(__dirname, "dist"),
+	},
 	module: {
 		rules: [
 			{ test: /\.js$/, use: "babel-loader" },
