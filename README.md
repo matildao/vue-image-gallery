@@ -1,6 +1,6 @@
 # Image Gallery In Vue
 
-![alt text](vue-image_gallery.png "Image is currently not available")
+![alt text](https://github.com/matildao/vue-image-gallery/blob/master/public/vue_image_gallery.png "Image is currently not available")
 
 This is an image gallery that was reworked from a vanilla javaScript project to a vue project. The project uses the Flickr API feature "getPhotos" and showcases pictures of images tagged with the word 'dog'.
 
