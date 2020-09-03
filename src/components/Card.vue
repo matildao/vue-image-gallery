@@ -36,24 +36,26 @@ export default {
 
 <style lang="scss">
 $shadow-color: #adadad;
+$shadow-size1: 5px;
+$shadow-size2: 7px;
 
 .card {
-	width: 100%;
+	-webkit-box-shadow: 0px $shadow-size2 $shadow-size1 0px $shadow-color;
+	-moz-box-shadow: 0px $shadow-size2 $shadow-size1 0px $shadow-color;
+	box-shadow: 0px $shadow-size2 $shadow-size1 0px $shadow-color;
 	height: 100%;
-	-webkit-box-shadow: 0px 7px 5px 0px $shadow-color;
-	-moz-box-shadow: 0px 7px 5px 0px $shadow-color;
-	box-shadow: 0px 7px 5px 0px $shadow-color;
+	width: 100%;
 }
 
 .card-image {
-	width: 100%;
-	height: 100%;
 	object-fit: cover;
+	height: 100%;
+	width: 100%;
 }
 
 .card-image:hover {
-	transform: scale(1.1);
-	transition: all 0.4s ease;
 	-webkit-transition: all 0.4s ease;
+	transition: all 0.4s ease;
+	transform: scale(1.1);
 }
 </style>

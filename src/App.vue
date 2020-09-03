@@ -1,6 +1,6 @@
 <template>
 	<div id="app">
-		<Gallery></Gallery>
+		<Gallery />
 	</div>
 </template>
 
@@ -11,11 +11,6 @@ export default {
 	name: "App",
 	components: {
 		Gallery,
-	},
-	data() {
-		return {
-			message: "Hello World",
-		};
 	},
 };
 </script>
