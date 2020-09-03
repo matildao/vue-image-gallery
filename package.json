@@ -1,7 +1,7 @@
 {
 	"name": "vue-image-gallery",
 	"version": "1.0.0",
-	"description": "",
+	"description": "Vue Image gallery",
 	"main": "index.js",
 	"scripts": {
 		"serve": "webpack-dev-server --mode development",
