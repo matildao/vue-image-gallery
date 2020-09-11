@@ -3,12 +3,14 @@ module.exports = {
 	env: {
 		node: true,
 		browser: true,
+		"jest/globals": true,
 	},
 	extends: [
 		"plugin:vue/recommended",
 		"eslint:recommended",
 		"prettier/vue",
 		"plugin:prettier/recommended",
+		"plugin:jest/all",
 	],
 	rules: {
 		"vue/component-name-in-template-casing": ["error", "PascalCase"],
@@ -18,4 +20,5 @@ module.exports = {
 	parserOptions: {
 		parser: "babel-eslint",
 	},
+	plugins: ["jest"],
 };

@@ -1,0 +1,9 @@
+version: 2.1
+workflows:
+  "Image gallery workflow":
+		jobs:
+			docker:
+				- image: circleci/node:8.11.2
+			working_directory: ~/matildao/image-gallery
+			- run: npm install
+			- run: npm test

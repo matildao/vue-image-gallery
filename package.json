@@ -1,22 +1,22 @@
 {
 	"name": "vue-image-gallery",
 	"version": "1.0.0",
-	"description": "Vue Image gallery",
+	"description": "Vue Image Gallery",
 	"main": "index.js",
 	"scripts": {
 		"serve": "webpack-dev-server --mode development",
 		"build": "webpack --config webpack.config.js",
-		"test": "echo \"Error: no test specified\" && exit 1"
+		"test": "jest --coverage"
 	},
 	"author": "Matilda Olsson",
 	"license": "ISC",
 	"devDependencies": {
-		"@babel/core": "^7.11.5",
+		"@babel/core": "^7.11.6",
 		"@babel/preset-env": "^7.11.5",
+		"@vue/test-utils": "^1.0.5",
 		"babel-eslint": "^10.1.0",
 		"babel-loader": "^8.1.0",
 		"babel-plugin-transform-regenerator": "^6.26.0",
-		"babel-polyfill": "^6.26.0",
 		"css-loader": "^4.2.2",
 		"dotenv-webpack": "^2.0.0",
 		"eslint": "^7.8.1",
@@ -25,6 +25,9 @@
 		"eslint-plugin-prettier": "^3.1.4",
 		"eslint-plugin-vue": "^6.2.2",
 		"html-webpack-plugin": "^4.4.1",
+		"jest": "^26.4.2",
+		"jest-fetch-mock": "^3.0.3",
+		"jest-transform-stub": "^2.0.0",
 		"node-sass": "^4.14.1",
 		"prettier": "^2.1.1",
 		"rimraf": "^3.0.2",
@@ -38,5 +41,13 @@
 		"webpack": "^4.44.1",
 		"webpack-cli": "^3.3.12",
 		"webpack-dev-server": "^3.11.0"
+	},
+	"dependencies": {
+		"babel-core": "^7.0.0-bridge.0",
+		"babel-polyfill": "^6.26.0",
+		"eslint-plugin-jest": "^24.0.0",
+		"fetch-mock": "^9.10.7",
+		"node-fetch": "^2.6.1",
+		"vue-jest": "^3.0.6"
 	}
 }

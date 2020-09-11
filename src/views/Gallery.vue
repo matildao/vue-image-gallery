@@ -2,12 +2,12 @@
 	<div>
 		<h2 class="gallery-title">Vue Image Gallery</h2>
 		<div class="divider"></div>
-		<div v-if="failedToFetchImages" class="gallery-wrapper">
+		<div v-if="!flickrImagesData" id="empty-gallery" class="gallery-wrapper">
 			<div v-for="n in 50" :key="n" class="default-tile">
-				<p>No Image Available</p>
+				<p id="p-image-not-available">No Image Available</p>
 			</div>
 		</div>
-		<div v-else class="gallery-wrapper">
+		<div v-else id="full-gallery" class="gallery-wrapper">
 			<div v-for="photo in flickrImagesData" :key="photo.id">
 				<Card
 					:id="photo.id"
@@ -23,6 +23,7 @@
 
 <script>
 import Card from "../components/Card.vue";
+import { fetchFlickrImages } from "../actions/flickr";
 
 export default {
 	name: "Gallery",
@@ -32,23 +33,16 @@ export default {
 	data() {
 		return {
 			flickrImagesData: {},
-			failedToFetchImages: false,
 		};
 	},
 	beforeMount() {
 		this.getFlickrImages();
 	},
 	methods: {
-		async getFlickrImages() {
-			try {
-				const res = await fetch(
-					`https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=${process.env.API_KEY}&tags=animals&page=1&format=json&nojsoncallback=1`
-				);
-				const data = await res.json();
-				this.flickrImagesData = data.photos.photo;
-			} catch (error) {
-				this.failedToFetchImages = true;
-			}
+		getFlickrImages() {
+			fetchFlickrImages().then((res) => {
+				this.flickrImagesData = res;
+			});
 		},
 	},
 };
