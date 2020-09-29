@@ -44,7 +44,7 @@ describe("gallery", () => {
 		expect(spyUpdate).toHaveBeenCalledTimes(1);
 	});
 
-	it("waaaaaaaaaaa", async () => {
+	it("renders correct tiles when populated with data", async () => {
 		expect.assertions(1);
 
 		let wrapper = setupGalleryInstance();
