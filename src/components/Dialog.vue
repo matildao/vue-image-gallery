@@ -1,9 +1,7 @@
 <template>
-	<div>
-		<div v-if="open" class="dialog">
-			<button class="close-button" @click="$emit('close')">x</button>
-			<img class="fullscreen-image" :src="image" />
-		</div>
+	<div v-if="show" class="dialog">
+		<button class="close-button" @click="closeDialog()">x</button>
+		<img class="fullscreen-image" :src="image" />
 	</div>
 </template>
 
@@ -15,18 +13,19 @@ export default {
 			type: String,
 			default: "",
 		},
+		open: Boolean,
 	},
 	data() {
 		return {
-			open: false,
+			show: false,
 		};
 	},
 	methods: {
 		openDialog() {
-			this.open = true;
+			this.show = true;
 		},
 		closeDialog() {
-			this.open = false;
+			this.show = false;
 		},
 	},
 };

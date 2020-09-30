@@ -1,12 +1,20 @@
 <template>
-	<div class="card">
-		<img class="card-image" :src="flickrImage" />
+	<div>
+		<div class="card" @click="$refs.dialog.openDialog()">
+			<img class="card-image" :src="flickrImage" />
+		</div>
+		<Dialog ref="dialog" :image="flickrImage" />
 	</div>
 </template>
 
 <script>
+import Dialog from "./Dialog.vue";
+
 export default {
 	name: "Card",
+	components: {
+		Dialog,
+	},
 	props: {
 		farm: {
 			type: Number,
